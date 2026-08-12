@@ -1,12 +1,190 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ร้านค้าชั้นนำ | Top Store</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>นาย ณัฐพล สระประทุม รหัสนิสิต 66011211150</h1>
-    <h1>นาย ภูมิรินทร์ พุ่มเรือง รหัสนิสิต 66011211195</h1>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">TOP<span>STORE</span></div>
+
+            <ul class="nav-links">
+                <li><a href="#home">หน้าแรก</a></li>
+                <li><a href="#products">สินค้า</a></li>
+                <li><a href="#about">เกี่ยวกับเรา</a></li>
+                <li><a href="#contact">ติดต่อ</a></li>
+            </ul>
+
+            <button class="cart-btn" onclick="showCart()">
+                🛒 ตะกร้า <span id="cart-count">0</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="small-title">WELCOME TO TOP STORE</p>
+            <h1>ร้านค้าชั้นนำ<br><span>สินค้าคุณภาพ</span></h1>
+            <p>
+                พบกับสินค้าคุณภาพดี ราคาพิเศษ
+                พร้อมบริการที่ใส่ใจลูกค้าทุกคน
+            </p>
+
+            <a href="#products" class="main-btn">เลือกซื้อสินค้า</a>
+        </div>
+
+        <div class="hero-image">
+            🛍️
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <h2>หมวดหมู่สินค้า</h2>
+
+        <div class="category-grid">
+            <div class="category-card">📱<h3>อิเล็กทรอนิกส์</h3></div>
+            <div class="category-card">👕<h3>แฟชั่น</h3></div>
+            <div class="category-card">🎧<h3>อุปกรณ์เสริม</h3></div>
+            <div class="category-card">🏠<h3>ของใช้ในบ้าน</h3></div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="products">
+        <div class="section-title">
+            <p>OUR PRODUCTS</p>
+            <h2>สินค้ายอดนิยม</h2>
+        </div>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <div class="product-image blue">🎧</div>
+                <div class="product-info">
+                    <span>อุปกรณ์เสริม</span>
+                    <h3>หูฟังไร้สาย Pro</h3>
+                    <p class="price">฿1,290</p>
+                    <button onclick="addToCart('หูฟังไร้สาย Pro', 1290)">
+                        เพิ่มลงตะกร้า
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image purple">⌚</div>
+                <div class="product-info">
+                    <span>อิเล็กทรอนิกส์</span>
+                    <h3>Smart Watch X</h3>
+                    <p class="price">฿2,490</p>
+                    <button onclick="addToCart('Smart Watch X', 2490)">
+                        เพิ่มลงตะกร้า
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image orange">👟</div>
+                <div class="product-info">
+                    <span>แฟชั่น</span>
+                    <h3>รองเท้า Sport</h3>
+                    <p class="price">฿1,890</p>
+                    <button onclick="addToCart('รองเท้า Sport', 1890)">
+                        เพิ่มลงตะกร้า
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image green">🎒</div>
+                <div class="product-info">
+                    <span>แฟชั่น</span>
+                    <h3>กระเป๋า Premium</h3>
+                    <p class="price">฿990</p>
+                    <button onclick="addToCart('กระเป๋า Premium', 990)">
+                        เพิ่มลงตะกร้า
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Promotion -->
+    <section class="promotion">
+        <div>
+            <p>LIMITED OFFER</p>
+            <h2>ลดสูงสุด 50%</h2>
+            <p>ช้อปวันนี้ รับโปรโมชั่นพิเศษทันที</p>
+        </div>
+
+        <a href="#products" class="main-btn">ช้อปเลย</a>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="about-icon">⭐</div>
+
+        <div>
+            <p>WHY TOP STORE?</p>
+            <h2>ร้านค้าที่ลูกค้าไว้วางใจ</h2>
+            <p>
+                เราคัดสรรสินค้าคุณภาพ พร้อมมอบประสบการณ์
+                การซื้อสินค้าที่ง่าย รวดเร็ว และปลอดภัย
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="section-title">
+            <p>CONTACT US</p>
+            <h2>ติดต่อเรา</h2>
+        </div>
+
+        <form onsubmit="sendMessage(event)">
+            <input type="text" placeholder="ชื่อของคุณ" required>
+            <input type="email" placeholder="อีเมล" required>
+            <textarea placeholder="ข้อความ" required></textarea>
+            <button type="submit">ส่งข้อความ</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="logo">TOP<span>STORE</span></div>
+        <p>© 2026 TOP STORE. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <button class="close" onclick="closeCart()">×</button>
+
+            <h2>🛒 ตะกร้าสินค้า</h2>
+
+            <div id="cart-items">
+                <p>ยังไม่มีสินค้าในตะกร้า</p>
+            </div>
+
+            <div class="cart-total">
+                รวมทั้งหมด: <strong id="cart-total">฿0</strong>
+            </div>
+
+            <button class="checkout-btn" onclick="checkout()">
+                ดำเนินการสั่งซื้อ
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
